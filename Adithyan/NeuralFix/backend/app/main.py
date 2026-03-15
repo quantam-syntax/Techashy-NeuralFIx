@@ -6,6 +6,7 @@ from app.core.config import get_settings
 from app.db.database import create_tables
 from app.services.rag_service import load_or_create_vector_store, get_rag_status
 from app.api.routers import sessions_router, chat_router, images_router, reports_router, rag_router
+from app.api import visionagent
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(levelname)-8s  %(name)s — %(message)s")
 logger = logging.getLogger(__name__)
@@ -35,6 +36,7 @@ app.include_router(chat_router)
 app.include_router(images_router)
 app.include_router(reports_router)
 app.include_router(rag_router)
+app.include_router(visionagent.router)
 
 
 @app.get("/health")

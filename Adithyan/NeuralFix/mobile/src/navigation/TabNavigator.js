@@ -5,6 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { COLORS, FONTS } from '../utils/theme';
 import ChatStackNavigator from './ChatStackNavigator';
 import HistoryScreen from '../screens/HistoryScreen';
+import VisionScreen from '../screens/VisionScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,6 +26,14 @@ export default function TabNavigator() {
           </View>
         ),
       }} />
+      <Tab.Screen name="VisionTab" component={VisionScreen} options={{
+        tabBarLabel: 'Vision',
+        tabBarIcon: ({ focused, color }) => (
+          <View style={[styles.iconWrap, focused && styles.iconActive]}>
+            <Ionicons name={focused ? 'scan' : 'scan-outline'} size={22} color={color} />
+          </View>
+        ),
+      }} />
       <Tab.Screen name="HistoryTab" component={HistoryScreen} options={{
         tabBarLabel: 'History',
         tabBarIcon: ({ focused, color }) => (
@@ -38,8 +47,9 @@ export default function TabNavigator() {
 }
 
 const styles = StyleSheet.create({
-  tabBar:    { backgroundColor: COLORS.bg1, borderTopWidth: 1, borderTopColor: COLORS.border, height: 72, paddingBottom: 12, paddingTop: 8 },
-  tabLabel:  { fontSize: FONTS.sizes.xs, fontWeight: FONTS.weights.semibold, letterSpacing: 0.5, textTransform: 'uppercase' },
-  iconWrap:  { padding: 4, borderRadius: 8 },
-  iconActive:{ backgroundColor: COLORS.accentDim },
+  tabBar: { backgroundColor: COLORS.bg1, borderTopWidth: 1, borderTopColor: COLORS.border, height: 72, paddingBottom: 12, paddingTop: 8 },
+  tabLabel: { fontSize: FONTS.sizes.xs, fontWeight: FONTS.weights.semibold, letterSpacing: 0.5, textTransform: 'uppercase' },
+  iconWrap: { padding: 4, borderRadius: 8 },
+  iconActive: { backgroundColor: COLORS.accentDim },
 });
+

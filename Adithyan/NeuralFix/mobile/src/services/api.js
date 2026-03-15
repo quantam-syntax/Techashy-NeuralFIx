@@ -6,13 +6,13 @@ async function apiFetch(url, options = {}) {
   return res.json();
 }
 
-export const checkHealth     = ()               => apiFetch(`${API_BASE_URL}/health`);
-export const listSessions    = ()               => apiFetch(`${API_BASE_URL}/api/sessions/`);
-export const getSession      = (id)             => apiFetch(`${API_BASE_URL}/api/sessions/${id}/`);
-export const deleteSession   = (id)             => apiFetch(`${API_BASE_URL}/api/sessions/${id}/`, { method: 'DELETE' });
+export const checkHealth = () => apiFetch(`${API_BASE_URL}/health`);
+export const listSessions = () => apiFetch(`${API_BASE_URL}/api/sessions/`);
+export const getSession = (id) => apiFetch(`${API_BASE_URL}/api/sessions/${id}/`);
+export const deleteSession = (id) => apiFetch(`${API_BASE_URL}/api/sessions/${id}/`, { method: 'DELETE' });
 export const sendChatMessage = (session_id, message) => apiFetch(`${API_BASE_URL}/api/chat/`, { method: 'POST', body: JSON.stringify({ session_id, message }) });
-export const generateReport  = (session_id)    => apiFetch(`${API_BASE_URL}/api/reports/generate/`, { method: 'POST', body: JSON.stringify({ session_id }) });
-export const getReport       = (id)            => apiFetch(`${API_BASE_URL}/api/reports/${id}/`);
+export const generateReport = (session_id) => apiFetch(`${API_BASE_URL}/api/reports/generate`, { method: 'POST', body: JSON.stringify({ session_id }) });
+export const getReport = (id) => apiFetch(`${API_BASE_URL}/api/reports/${id}/`);
 
 export const createSession = (title, category) =>
   apiFetch(`${API_BASE_URL}/api/sessions/`, { method: 'POST', body: JSON.stringify({ title, category }) });
