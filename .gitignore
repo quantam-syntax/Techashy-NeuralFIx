@@ -77,3 +77,4 @@ yarn-debug.log
 /Adithyan/NeuralFix/backend/.venv/
 /Adithyan/NeuralFix/backend/.env
 /Adithyan/NeuralFix/mobile/node_modules/
+/Mobile-App/NeuralFix/backend/.env

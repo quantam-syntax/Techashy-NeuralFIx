@@ -1,5 +1,5 @@
 // 👇 Change this to your server's local IP (shown when you run python run.py)
-export const API_BASE_URL = 'http://172.16.210.196:8001';
+export const API_BASE_URL = 'http://172.16.210.21:8001';
 
 export const ENDPOINTS = {
   health: `${API_BASE_URL}/health`,
