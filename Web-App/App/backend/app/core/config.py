@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     anthropic_api_key: str = ""
 
     # Groq
-    groq_api_key: str = "ur api key"
+    groq_api_key: str = "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"
 
     # Database — defaults to local SQLite so the app works out of the box
     database_url: str = "sqlite:///./netfix.db"
